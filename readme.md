@@ -16,13 +16,13 @@ npm install @importvault/bindall
 
 #### Internals
 
-- [reassign]() ```.this``` to fixed object for selected functions
+- [reassign](https://github.com/importvault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L1) ```.this``` to fixed object for selected functions
 
-- [mutates]() `fns` that holds the functions
+- [mutates](https://github.com/importvault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L11) `fns` that holds the functions
 
 - Other implementation ( [lodash](http://devdocs.io/lodash~4/index#bindall), [underscore](http://underscorejs.org/#bindall) ) of `bindall` does not provide option to control **what** `fns` is bound *to*.
 
-- 40 lines of [code]().
+- 40 lines of [code](https://github.com/importvault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L3-L13).
 
 
 

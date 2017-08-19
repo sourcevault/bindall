@@ -1,0 +1,5 @@
+build
+cmd.bat
+node_modules
+src/build.sh
+*.log

@@ -27,7 +27,11 @@ repository:
 
 description : "reassign .this to a fixed object for methods"
 
-version : "0.0.3"
+version : "0.1.0"
+
+scripts:
+
+  test:"node test.js"
 
 devDependencies:
 

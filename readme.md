@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sourcevault/bindall.svg?branch=travis)](https://travis-ci.org/sourcevault/bindall)
+
 # bindall ( ob , fns  , selected )
 
 #### API
@@ -8,7 +10,7 @@
 
 - `selected` - Array of string providing names of *selected* functions to bind - in case when binding needs to be done selectively.
 
-[![Build Status](https://travis-ci.org/sourcevault/bindall.svg?branch=travis)](https://travis-ci.org/sourcevault/bindall)
+
 
 #### Install
 

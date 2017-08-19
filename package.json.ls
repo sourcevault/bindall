@@ -1,4 +1,4 @@
-name : "@importvault/bindall"
+name : "@sourcevault/bindall"
 
 author: "joykrishnamondal <joykrishnamondal@gmail.com>"
 
@@ -10,10 +10,10 @@ keywords:
 
   "bindall"
 
-homepage:"https://github.com/importvault/bindall"
+homepage:"https://github.com/sourcevault/bindall"
 
 bugs:
-  url:"https://github.com/importvault/bindall/issues"
+  url:"https://github.com/sourcevault/bindall/issues"
 
 license:"MIT"
 
@@ -23,7 +23,7 @@ repository:
 
   type:"git"
 
-  url:"https://github.com/importvault/bindall.git"
+  url:"https://github.com/sourcevault/bindall.git"
 
 description : "reassign .this to a fixed object for methods"
 

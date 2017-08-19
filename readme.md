@@ -11,18 +11,18 @@
 #### Install
 
 ```
-npm install @importvault/bindall
+npm install @sourcevault/bindall
 ```
 
 #### Internals
 
-- [reassign](https://github.com/importvault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L1) ```.this``` to fixed object for selected functions
+- [reassign](https://github.com/sourcevault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L1) ```.this``` to fixed object for selected functions
 
-- [mutates](https://github.com/importvault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L11) `fns` that holds the functions
+- [mutates](https://github.com/sourcevault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L11) `fns` that holds the functions
 
 - Other implementation ( [lodash](http://devdocs.io/lodash~4/index#bindall), [underscore](http://underscorejs.org/#bindall) ) of `bindall` does not provide option to control **what** `fns` is bound *to*.
 
-- 40 lines of [code](https://github.com/importvault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L3-L13).
+- 40 lines of [code](https://github.com/sourcevault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L3-L13).
 
 
 
@@ -30,12 +30,12 @@ npm install @importvault/bindall
 
 **. . binding all functions in object** 
 
-|[ES5](https://github.com/importvault/bindall/tree/master) |
+|[ES5](https://github.com/sourcevault/bindall/tree/master) |
 | --- |
 
 ```livescript
 
-bindall = require "@importvault/bindall"
+bindall = require "@sourcevault/bindall"
 
 ob = 
   fuel:"coffee"
@@ -51,7 +51,7 @@ ob.fns.foo! # { fuel: 'coffee', fns: { foo: [Function] } } # can access .fuel no
 ```
 **. . for applying to a subset number of functions**
 
-|[ES5](https://github.com/importvault/bindall/tree/master) |
+|[ES5](https://github.com/sourcevault/bindall/tree/master) |
 | --- |
 
 ```livescript
@@ -74,4 +74,4 @@ ob.fns.foo! # { fns: { log: [Function] , bar: [Function] } }
 
 ## License
 
-Code and document released under MIT Licence, see [LICENSE](https://github.com/importvault/bindall/blob/livescript/LICENCE) file.
+Code and document released under MIT Licence, see [LICENSE](https://github.com/sourcevault/bindall/blob/livescript/LICENCE) file.

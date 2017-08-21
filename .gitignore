@@ -6,3 +6,4 @@ src/build.sh
 *.js
 *.json
 test.ls
+.npmignore

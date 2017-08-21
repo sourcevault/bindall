@@ -11,7 +11,7 @@
 #### Install
 
 ```
-npm install @sourcevault/bindall
+npm install @sourcevault/bindall@0.1.0
 ```
 
 #### Internals

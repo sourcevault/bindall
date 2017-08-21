@@ -108,11 +108,7 @@ ob.fns.bar!
 
 **Notes on Immutability**
 
-<center>
 *If a tree falls in a forest and no one is around to hear it, does it make a sound ?*
-</center>
-
-<br>
 
 Passing an `[]` object to the `addto` option makes bindall immutable - in the sense that `[]` is mutated and the original object from which the methods were extracted is untouched. 
 

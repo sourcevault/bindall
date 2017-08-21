@@ -1,6 +1,9 @@
+
+# ↓ ------- MAIN BIT ------- ↓ #
 bind =  (fn,ob) -> -> fn.apply ob,arguments
 
-main = (ob,methods,allNames) !->
+main = (ob,methods,allNames,attachTo) ->
+
 
   len =  allNames.length + 1
 
@@ -10,24 +13,49 @@ main = (ob,methods,allNames) !->
 
     bound = bind methods[name] , ob
 
-    methods[name] = bound
+    attachTo[name] = bound
 
-opts = (ob,methods) !->
+  attachTo
+
+# ↑ ------- MAIN BIT ------- ↑ #
+
+
+opts = (ob,methods) -> # fill all variables user choose
+
+
+  attachTo = methods # default
 
   switch arguments.length
 
   # Apply to ..
 
-  | 2 => # .. all functions
+  | 2 => # assume default opts # all functions  # mutates
 
     allNames = Object.getOwnPropertyNames methods
 
-  | 3 => # .. selective functions
-
-    allNames = arguments[2]
+  | 3 => # non-default options
 
 
-  main ob , methods , allNames
+    userOption = arguments[2]
+
+    if userOption.select # selective functions
+
+      allNames = userOption.select
+
+    else
+
+      allNames = Object.getOwnPropertyNames methods
+
+    if userOption.addto # which object to attach to
+
+      attachTo = userOption.addto
+
+
+  main do
+    ob # object to bind .this to
+    methods # extract fns from this object
+    allNames # names of fns to extract as an array
+    attachTo # attach bound methods to this object
 
 
 module.exports = opts

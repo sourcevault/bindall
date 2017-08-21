@@ -2,6 +2,7 @@ name : "@sourcevault/bindall"
 
 author: "joykrishnamondal <joykrishnamondal@gmail.com>"
 
+
 keywords:
 
   "livescript"
@@ -27,7 +28,7 @@ repository:
 
 description : "reassign .this to a fixed object for methods"
 
-version : "0.0.3"
+version : "0.2.0"
 
 devDependencies:
 

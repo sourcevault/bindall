@@ -33,7 +33,7 @@ npm install @sourcevault/bindall
 
 #### Examples
 
-|[View in LiveScript](https://github.com/sourcevault/bindall/tree/livescript) |
+|[View in ES5](https://github.com/sourcevault/bindall/tree/master) |
 | --- |
 
 - . . binding all functions that exists in `fns` object

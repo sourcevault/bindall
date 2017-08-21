@@ -33,3 +33,7 @@ version : "0.2.0"
 devDependencies:
 
   livescript:"1.5.0"
+
+scripts:
+
+  test:"node test.js"

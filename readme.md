@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sourcevault/bindall.svg?branch=master)](https://travis-ci.org/sourcevault/bindall)
+
 # bindall ( ob , fns  , options )
 
 #### API
@@ -6,7 +8,7 @@
 
 *optional*
 
-- `options` 
+- `options`
 
   - `select` - Array of string providing names of functions attached to *fns* to bind - in case when binding needs to be done selectively.
 
@@ -23,18 +25,18 @@ npm install @sourcevault/bindall
 
 - [reassign](https://github.com/sourcevault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L1) ```.this``` to fixed object for selected functions
 
-- by **default** [mutates](https://github.com/sourcevault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L11) `fns` that holds the functions. To prevent mutation use the `addto` option.
+- [mutates](https://github.com/sourcevault/bindall/blob/7e6208f6157b19a43133822233ff65aee130e274/main.ls#L11) `fns` that holds the functions (**default** behavior) . To prevent mutation use the `addto` option.
 
-- Other implementation ( [lodash](http://devdocs.io/lodash~4/index#bindall), [underscore](http://underscorejs.org/#bindall) ) of `bindall` do not provide options to control **what** `fns` is bound *to*. They also lack the ability to prevent mutation when needed.
+- Other implementation ( [lodash](http://devdocs.io/lodash~4/index#bindall), [underscore](http://underscorejs.org/#bindall) ) of `bindall` lack options to control **what** `fns` is bound *to*. Also cannot prevent mutation when needed.
 
 
 
 #### Examples
 
-|[View in ES5](https://github.com/sourcevault/bindall/tree/master) |
+|[View in LiveScript](https://github.com/sourcevault/bindall/tree/livescript) |
 | --- |
 
-- . . binding all functions in object
+- . . binding all functions that exists in `fns` object
 
 
 ```livescript
@@ -59,7 +61,7 @@ ob.fns.foo!
 # { fuel: 'coffee', fns: { foo: [Function] } } # can access .fuel now :)
 
 ```
-- . . for applying to a subset number of functions
+- . . for applying to a subset number of functions in `fns` object
 
 ```livescript
 ob = 
@@ -83,7 +85,7 @@ ob.fns.foo! # {fns: { foo: [Function: log] , bar: [Function] }}
 
 ```
 
-* .. to prevent **mutating** original object 
+* .. to prevent **mutating** original object `fns`
 
 ```livescript
 ob = 
@@ -92,7 +94,7 @@ ob =
     foo:log
     bar:log
 
-boundfns = bindall ob , ob.fns , ( select:["bar"], addto:[] )
+boundfns = bindall ob , ob.fns , ( select:["bar"], addto:{} )
 
 # ↓ boundfns contains the newly minted bound fns ↓
 
@@ -110,14 +112,14 @@ ob.fns.bar!
 
 *If a tree falls in a forest and no one is around to hear it, does it make a sound ?*
 
-Passing an `[]` object to the `addto` option makes bindall immutable - in the sense that `[]` is mutated and the original object from which the methods were extracted is untouched. 
+Passing an `{}` (empty) object to the `addto` option makes bindall immutable - in the sense that `{}` (empty) object is mutated and the original object from which the methods were extracted is untouched. 
 
 This is useful . .
-- . . if the functions being extracted from is an external object, 
+- . . if the object providing the methods is external.
 
-- . . when we need to add our bound fuction to an independent object of our choosing.
+- . . when we need to add our bound functions to an independent object of our choosing.
 
-bindall that mutates is dangerous and should be used with caution. The main usecase for bindall that mutates the extracting object is within the enclave of constructor objects.
+bindall that mutate `fns` is dangerous and should be used with caution. The main usecase for mutating `fns` is within the enclave of constructor objects.
 
 ### Updates and API change
 
@@ -127,5 +129,5 @@ bindall that mutates is dangerous and should be used with caution. The main usec
 
 ## License
  
-Code and document released under MIT Licence, see [LICENSE](https://github.com/sourcevault/bindall/blob/livescript/LICENCE) for details.
+Code and document released under MIT Licence, see [LICENSE](https://github.com/sourcevault/bindall/blob/master/LICENCE) for details.
 

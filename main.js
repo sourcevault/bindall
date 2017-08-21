@@ -4,24 +4,34 @@ bind = function(fn, ob){
     return fn.apply(ob, arguments);
   };
 };
-main = function(ob, methods, allNames){
+main = function(ob, methods, allNames, attachTo){
   var len, name, bound;
   len = allNames.length + 1;
   while (--len) {
     name = allNames[len - 1];
     bound = bind(methods[name], ob);
-    methods[name] = bound;
+    attachTo[name] = bound;
   }
+  return attachTo;
 };
 opts = function(ob, methods){
-  var allNames;
+  var attachTo, allNames, userOption;
+  attachTo = methods;
   switch (arguments.length) {
   case 2:
     allNames = Object.getOwnPropertyNames(methods);
     break;
   case 3:
-    allNames = arguments[2];
+    userOption = arguments[2];
+    if (userOption.select) {
+      allNames = userOption.select;
+    } else {
+      allNames = Object.getOwnPropertyNames(methods);
+    }
+    if (userOption.addto) {
+      attachTo = userOption.addto;
+    }
   }
-  main(ob, methods, allNames);
+  return main(ob, methods, allNames, attachTo);
 };
 module.exports = opts;

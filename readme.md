@@ -133,7 +133,7 @@ This is useful . .
 
 - . . when we need to add our bound functions to an independent object of our choosing.
 
-bindall that mutate `fns` is dangerous and should be used with caution. The main usecase for mutating `fns` is within the enclave of constructor objects.
+bindall that mutate `fns` is dangerous and should be used with caution. The main usecase for mutating `fns` is within the enclave of where it was created.
 
 ### Updates and API change
 

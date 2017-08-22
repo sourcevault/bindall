@@ -33,7 +33,7 @@ npm install @sourcevault/bindall
 
 #### Examples
 
-|[View in LiveScript](https://github.com/sourcevault/bindall/tree/livescript) |
+|[view in beautiful livescript](https://github.com/sourcevault/bindall/tree/livescript) |
 | --- |
 
 - . . binding all functions that exists in `fns` object
@@ -137,7 +137,7 @@ bindall that mutate `fns` is dangerous and should be used with caution. The main
 
 ### Updates and API change
 
-- `0.2.0` changed `selected` to `option` to expand functionality. Third argument is an object instead of an array and the previous functionality of `selected` is now passed as value to `select` key in `option`. `addto` allows control of what object to attach thee newly created fuctions to.
+- `0.2.0^` changed `selected` to `option` to expand functionality. Third argument is an object instead of an array and the previous functionality of `selected` is now passed as value to `select` key in `option`. `addto` allows control of what object to attach thee newly created fuctions to.
 
 - `0.1.0` [readme](https://github.com/sourcevault/bindall/tree/0.1.0)
 

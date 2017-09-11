@@ -17,7 +17,7 @@
     "url": "https://github.com/sourcevault/bindall.git"
   },
   "description": "reassign .this to a fixed object for methods",
-  "version": "0.2.11",
+  "version": "0.3.0",
   "devDependencies": {
     "livescript": "1.5.0"
   },

@@ -23,12 +23,12 @@ opts = function(ob, methods){
     break;
   case 3:
     userOption = arguments[2];
-    if (userOption.select) {
+    if (userOption.select || userOption.s) {
       allNames = userOption.select;
     } else {
       allNames = Object.getOwnPropertyNames(methods);
     }
-    if (userOption.addto) {
+    if (userOption.addto || userOption.a) {
       attachTo = userOption.addto;
     }
   }

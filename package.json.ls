@@ -28,7 +28,7 @@ repository:
 
 description : "reassign .this to a fixed object for methods"
 
-version : "0.3.0"
+version : "0.3.1"
 
 devDependencies:
 

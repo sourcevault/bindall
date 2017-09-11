@@ -1,5 +1,6 @@
 
 # ↓ ------- MAIN BIT ------- ↓ #
+
 bind =  (fn,ob) -> -> fn.apply ob,arguments
 
 main = (ob,methods,allNames,attachTo) ->
@@ -38,7 +39,7 @@ opts = (ob,methods) -> # fill all variables user choose
 
     userOption = arguments[2]
 
-    if userOption.select # selective functions
+    if userOption.select or userOption.s # selective functions
 
       allNames = userOption.select
 
@@ -46,7 +47,7 @@ opts = (ob,methods) -> # fill all variables user choose
 
       allNames = Object.getOwnPropertyNames methods
 
-    if userOption.addto # which object to attach to
+    if userOption.addto or userOption.a # which object to attach to
 
       attachTo = userOption.addto
 

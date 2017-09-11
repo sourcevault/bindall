@@ -12,7 +12,13 @@
 
   - `select` - Array of string providing names of functions attached to *fns* to bind - in case when binding needs to be done selectively.
 
-  - `addto` - object to bind the newly created bound methods to. Using this option means `fns` object is **not** mutated and the original methods attached to `fns` is kept in place.
+  - `addto` - object to bind the newly created bound methods to. Using this option means `fns` object is **not** mutated and the original methods attached to `fns` is kept in place. 
+
+  - `s` - same as `select`
+
+  - `a` - same as `addto`
+
+
 
 
 #### Install
@@ -135,9 +141,13 @@ This is useful . .
 
 bindall that mutate `fns` is dangerous and should be used with caution. The main usecase for mutating `fns` is within the enclave of where it was created.
 
+
+
 ### Updates and API change
 
-- `0.2.0^` changed `selected` to `option` to expand functionality. Third argument is an object instead of an array and the previous functionality of `selected` is now passed as value to `select` key in `option`. `addto` allows control of what object to attach thee newly created fuctions to.
+- `0.3.0` added `s` and `a` for `select` and `addto` respectively for power users
+
+- `0.2.0` changed `selected` to `option` to expand functionality. Third argument is an object instead of an array and the previous functionality of `selected` is now passed as value to `select` key in `option`. `addto` allows control of what object to attach thee newly created fuctions to.
 
 - `0.1.0` [readme](https://github.com/sourcevault/bindall/tree/0.1.0)
 
